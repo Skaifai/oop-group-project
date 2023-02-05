@@ -14,7 +14,8 @@ public class Formal extends Shoe implements Wearable {
         this.size = newSize;
     }
 
-    // Override the sell method from the parent class to add information about the size of the shoe
+    // "sell" method from the parent class to add information about the size of the shoe
+    // if the status of the shoe is available, then it returns the following line including the size of the particular shoe
     @Override
     public void sell() {
         if (this.getStatus() == false) {
@@ -27,6 +28,7 @@ public class Formal extends Shoe implements Wearable {
         }
     }
     // Implement the wear method from the Wearable interface
+    // The method checks if the shoe is available depending on the stored status that we can see in the product class
     public void wear() {
         if (this.getStatus() == false) {
             System.out.println("We are sorry, but it is not available at the moment.");
@@ -36,7 +38,8 @@ public class Formal extends Shoe implements Wearable {
         }
     }
 
-    // Add a new method to change the price of the shoe based on the size
+    // "ajustPrice" method is created to change the price of the shoe based on the size.
+    // and if there is no available size it prints the following line of words
     public void adjustPrice(int size) {
         if (size == 7) {
             this.setPrice(this.getPrice() + 10.0);
