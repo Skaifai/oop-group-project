@@ -1,7 +1,6 @@
 public class Lower extends Clothing implements Wearable{
     public Lower(String newName, double initialPrice) {
         super(newName, initialPrice);
-        this.type = type;
     }
     boolean isEquipped = false;
     public void putOn() {
