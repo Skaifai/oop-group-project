@@ -1,6 +1,22 @@
 public class Lower extends Clothing implements Wearable{
     public Lower(String newName, double initialPrice) {
         super(newName, initialPrice);
+        this.type = type;
+    }
+    boolean isEquipped = false;
+    public void putOn() {
+        if (this.isEquipped == false) {
+            isEquipped = true;
+            System.out.println(this.getName() + " looks good on you!");
+        }
+        else System.out.println("You are already wearing " + this.getName() + "!");
+    }
+    public void putOff() {
+        if (this.isEquipped == true) {
+            isEquipped = false;
+            System.out.println("You removed " + this.getName() + ".");
+        }
+        else System.out.println("You are not wearing " + this.getName() + "!");
     }
 
     // Пиши свой код ниже.
