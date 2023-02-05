@@ -1,23 +1,48 @@
 public class Lower extends Clothing implements Wearable{
-    public Lower(String newName, double initialPrice) {
+    private int waistSize;
+    private int inseamLength;
+
+    public Lower(String newName, double initialPrice, int waistSize, int inseamLength) {
         super(newName, initialPrice);
+        this.waistSize = waistSize;
+        this.inseamLength = inseamLength;
     }
-    boolean isEquipped = false;
+
+    // Getter for waist size
+    public int getWaistSize() {
+        return waistSize;
+    }
+
+    // Getter for inseam length
+    public int getInseamLength() {
+        return inseamLength;
+    }
+
+    // Setter for waist size
+    public void setWaistSize(int waistSize) {
+        this.waistSize = waistSize;
+    }
+
+    // Setter for inseam length
+    public void setInseamLength(int inseamLength) {
+        this.inseamLength = inseamLength;
+    }
+
+    // Implementation of the putOn method from the Wearable interface
+    @Override
     public void putOn() {
-        if (this.isEquipped == false) {
-            isEquipped = true;
-            System.out.println(this.getName() + " looks good on you!");
-        }
-        else System.out.println("You are already wearing " + this.getName() + "!");
+        System.out.println("Putting on " + getName());
     }
+
+    // Implementation of the takeOff method from the Wearable interface
+    @Override
     public void putOff() {
-        if (this.isEquipped == true) {
-            isEquipped = false;
-            System.out.println("You removed " + this.getName() + ".");
-        }
-        else System.out.println("You are not wearing " + this.getName() + "!");
+        System.out.println("Taking off " + getName());
     }
 
-    // Пиши свой код ниже.
-
+    // Overridden toString method to include information about waist size and inseam length
+    @Override
+    public String toString() {
+        return super.toString() + " with waist size of " + waistSize + " and inseam length of " + inseamLength;
+    }
 }
