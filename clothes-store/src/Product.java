@@ -1,6 +1,6 @@
 // Main abstract class, which serves as the general
 // abstraction superclass for all the products in our store.
-public abstract class Product {
+public abstract class Product implements Wearable {
 
     // Constructor method, which allows to pass the values for the variable at the moment of the creation of the object.
     public Product(String newName, double initialPrice) {
@@ -14,7 +14,7 @@ public abstract class Product {
     }
 
     // Stores the name of the product.
-    private String name;
+    private String name = "No name";
 
     // Since our name variable is private, we need a getter method to read the name variable.
     // We don't need a setter method, because the name of the product should not be changed.
@@ -71,8 +71,18 @@ public abstract class Product {
         else {
             System.out.println("Thank you for buying " + this.getName() + "!");
             System.out.println("The amount to pay is " + this.getPrice());
+            this.setAmount(this.amount - 1);
         }
     }
 
 
+    @Override
+    public void putOn() {
+
+    }
+
+    @Override
+    public void putOff() {
+
+    }
 }
