@@ -38,7 +38,7 @@ public class Formal extends Shoe implements Wearable {
         }
     }
 
-    // "ajustPrice" method is created to change the price of the shoe based on the size.
+    // "adjustPrice" method is created to change the price of the shoe based on the size.
     // and if there is no available size it prints the following line of words
     public void adjustPrice(int size) {
         if (size == 7) {
