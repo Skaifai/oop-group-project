@@ -6,6 +6,27 @@ import java.util.Scanner;
 // import java.util.Properties;
 public class Main {
     public static void main(String[] args) {
+<<<<<<< Updated upstream
+=======
+        // Connection url and properties.
+        String url = new String();
+        url = "jdbc:postgresql://localhost:5432/clothes";
+        Properties props = new Properties();
+
+        // Adding properties.
+        props.setProperty("user", "postgres");
+        props.setProperty("password", "1210");
+        props.setProperty("SSL", "false");
+
+        // Creating the connection to the database.
+        DatabaseOperations DBOps = new DatabaseOperations(url, props);
+
+        // Dropping the old table in case it is left from the previous demonstration.
+        DBOps.deleteTable();
+
+        // Creating the table from scratch.
+        DBOps.createTable();
+>>>>>>> Stashed changes
 
         // Lists for the product objects.
         List<Product> listOfProducts = new ArrayList<Product>();
